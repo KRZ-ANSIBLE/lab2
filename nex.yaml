@@ -2,6 +2,10 @@
 - name: Sichere NEXen
   hosts: nex
   connection: network_cli
+  vars:
+    ansible_user: cfgbackup
+    ansible_password: vorort
+    ansible_network_os: nxos
   gather_facts: no
   tasks:
     - ios_command:

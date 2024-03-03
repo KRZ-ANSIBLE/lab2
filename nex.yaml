@@ -1,0 +1,11 @@
+---
+- name: Sichere NEXen
+  hosts: nex
+  gather_facts: no
+  tasks:
+    - ios_command:
+        commands: show run
+      register: show_run
+    - copy:
+        content: "{{ show_run.stdout[0] }}"
+        dest: "/etc/ansible/backups/{{ inventory_hostname }}.txt"

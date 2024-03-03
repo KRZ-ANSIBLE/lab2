@@ -1,6 +1,7 @@
 ---
 - name: Sichere NEXen
   hosts: nex
+  connection:local
   gather_facts: no
   tasks:
     - ios_command:

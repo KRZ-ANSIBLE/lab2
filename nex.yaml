@@ -1,7 +1,7 @@
 ---
 - name: Sichere NEXen
   hosts: nex
-  connection: local
+  ansible_connection: ansible.netcommon.network_cli
   gather_facts: no
   tasks:
     - ios_command:
